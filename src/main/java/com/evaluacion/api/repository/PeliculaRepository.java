@@ -1,0 +1,9 @@
+package com.evaluacion.api.repository;
+
+import com.evaluacion.api.model.Pelicula;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+public interface PeliculaRepository extends JpaRepository<Pelicula, Long> {
+    List<Pelicula> findByAnioEstrenoBetween(Integer desde, Integer hasta);
+}
